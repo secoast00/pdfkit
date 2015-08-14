@@ -30,6 +30,7 @@ class PDFKit
           # Do not cache PDFs
           headers.delete('ETag')
           headers.delete('Cache-Control')
+          headers.delete('Pragma')
         end
 
         headers['Content-Length']         = (body.respond_to?(:bytesize) ? body.bytesize : body.size).to_s
